@@ -9,24 +9,22 @@ import model.Contato;
 
 public class TesteDaoDelete {
 
-	public static void main(String[] args) {
+	public TesteDaoDelete() {
 		Contato contato = new Contato();
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Nome do contato a excluir: ");
-		String scnome = sc.nextLine();
-		contato.setNome(scnome);
-		
-		
+		System.out.println("Id do contato a excluir: ");
+		String scid = sc.nextLine();
+		contato.setNome(scid);
+
 		try {
 			ContatoDAO dao = new ContatoDAO();
-			dao.delete(contato.getNome());
+			dao.delete(contato.getId().toString());
 
-		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}		
-		
+		}
+
 	}
 
 }
